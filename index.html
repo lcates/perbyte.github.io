@@ -1,20 +1,21 @@
 ---
 layout: default
+title: Slightly Innovative
 ---
 
-<div class="home">
-
-  <h1>Posts</h1>
-
-  <ul class="posts">
     {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+<header>
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <p class="meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        {% if post.author %} &bull; {{ post.author }}{% endif %}
+        {% if post.meta %} &bull; {{ post.meta }}{% endif %}
+    </p>
+</header>
+<article>
+    {{ post.content }}
+</article>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+{% endfor %}
 
-</div>
+<p>subscribe <a href="/feed.xml">via RSS</a></p>
