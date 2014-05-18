@@ -1,12 +1,12 @@
 ---
 layout: post
 published: true
-date:   2014-05-17 13:35:53
+date:   2014-05-16
 title:  "Sample post 1"
 meta: test meta
 author: Default Author
 meta: test meta
-categories: test1 test2
+categories: jason
 tags: test1 test2
 ---
 

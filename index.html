@@ -1,21 +1,32 @@
 ---
 layout: default
-title: Slightly Innovative
+title: Home
 ---
 
-    {% for post in site.posts %}
+{% for post in paginator.posts %}
 <header>
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-        {% if post.author %} &bull; {{ post.author }}{% endif %}
-        {% if post.meta %} &bull; {{ post.meta }}{% endif %}
-    </p>
+  <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+  <p class="meta">
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+    {% if post.author %} &bull; {{ post.author }}{% endif %}
+    {% if post.meta %} &bull; {{ post.meta }}{% endif %}
+  </p>
 </header>
 <article>
-    {{ post.content }}
+  {{ post.content }}
 </article>
-
 {% endfor %}
 
-<p>subscribe <a href="/feed.xml">via RSS</a></p>
+<div class="pagination">
+  {% if paginator.next_page %}
+  <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older</a>
+  {% else %}
+  <span class="pagination-item older">Older</span>
+  {% endif %}
+
+  {% if paginator.previous_page %}
+  <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer</a>
+  {% else %}
+  <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>

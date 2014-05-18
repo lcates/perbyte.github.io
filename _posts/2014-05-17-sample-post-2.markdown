@@ -6,7 +6,7 @@ title:  "Sample post 2!"
 meta: test meta
 author: Default Author
 meta: test meta
-categories: jekyll update
+categories: josh
 tags: test1 test2
 ---
 

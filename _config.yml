@@ -1,10 +1,24 @@
-# Site settings
-title: Slightly Innovative
-email: not_setup_yet@slightlyinnovative.com
-description: "A co-authored blog by Josh Carlson and Jason Carr"
-baseurl: ""
-url: "http://slightlyinnovative.com"
+# Dependencies
+markdown: redcarpet
+pygments: true
 
-# Build settings
-markdown: kramdown
+# Permalinks
 permalink: pretty
+
+# Setup
+title: Slightly Innovative
+tagline: Better is still better
+url: http://slightlyinnovative.com
+paginate: 1
+author:
+  name: Josh Carlson
+  url: http://joshcarlson.com
+  email: joshucar@gmail.com
+
+# Custom vars
+version: 1.0.0
+github:
+  repo: https://github.com/slightly-innovative/slightly-innovative.github.io
+
+baseurl: ""
+encoding: utf-8
