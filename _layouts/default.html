@@ -1,42 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en-us">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
-
-  <meta name="description" content="{{ site.description }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="TODO">
-
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-  <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.ico" />
-  <!-- TODO: apple icon stuff -->
-  <!-- TODO: Win8 pinning, FB OpenGraph, Twitter Cards https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/extend.md -->
-
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-
-  <link rel="alternate" type="application/atom+xml" title="Slightly Innovative" href="{{ site.baseurl }}/atom.xml" />
-
-  <!--[if lt IE 9]>
-    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
-<body>
-  {% include header.html %}
-  <div class="container" role="main">
+{% include head.html %}
+<body class="">
+  {% include sidebar.html %}
+  <div class="content container" role="main">
     {{ content }}
   </div>
-  {% include footer.html %}
-
-  <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
-  <!-- TODO: fall back: something like <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script> -->
-  <script src="//cdn.jsdelivr.net/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <!-- TODO: fall back: something like <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script> -->
   <!-- TODO: google analytics <script></script> -->
 </body>
 </html>
