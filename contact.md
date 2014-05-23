@@ -3,10 +3,10 @@ layout: page
 title: Contact
 permalink: /contact/
 header: true
+keywords: Slightly Innovative, Aptify, Sitefinity, development
+description: Contact us at Slightly Innovative
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Send us a message on GitHub [here](https://github.com/slightly-innovative/slightly-innovative.github.io/issues/new).
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Or tweet us at [twitter.com/joshucar](http://twitter.com/joshucar) or [twitter.com/jasondavidcarr](http://twitter.com/jasondavidcarr).
