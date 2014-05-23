@@ -6,7 +6,7 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <span class="post-date">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-      {% if page.author %} &bull; {{ page.author }}{% endif %}
+      {% if post.author %} &bull; {% include post-author.html author = post.author %}{% endif %}
       {% if page.meta %} &bull; {{ page.meta }}{% endif %}
     </span>
   </header>
