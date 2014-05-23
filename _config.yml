@@ -13,7 +13,7 @@ url: http://slightlyinnovative.com
 paginate: 5
 
 # Custom vars
-disqus_short_name: slightly-innovative
+disqus_short_name: slightlyinnovative
 version: 1.0.0
 github:
   repo: https://github.com/slightly-innovative/slightly-innovative.github.io

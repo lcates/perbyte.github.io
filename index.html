@@ -12,7 +12,7 @@ title: Home
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
       {% if post.author %} &bull; {% include post-author.html author = post.author %}{% endif %}
       {% if post.meta %} &bull; {{ post.meta }}{% endif %}
-      {% if post.comments %} &bull; <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">Comments</a> {% endif %}
+      {% if post.comments %} &bull; <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread"></a> {% endif %}
     </span>
     {{ post.content }}
   </div>
@@ -31,3 +31,4 @@ title: Home
   <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
+{% include disqus.html %}
