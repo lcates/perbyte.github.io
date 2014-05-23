@@ -4,8 +4,7 @@ published: true
 date:   2014-05-17 13:35:53
 title:  "Sample post 2!"
 meta: test meta
-author: Default Author
-meta: test meta
+author: josh
 categories: josh
 comments: true
 tags: test1 test2

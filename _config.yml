@@ -11,10 +11,6 @@ description: What works at work works because it works not because its work.
 tagline: Better is still better
 url: http://slightlyinnovative.com
 paginate: 5
-author:
-  name: Josh Carlson
-  url: http://joshcarlson.com
-  email: joshucar@gmail.com
 
 # Custom vars
 disqus_short_name: slightly-innovative

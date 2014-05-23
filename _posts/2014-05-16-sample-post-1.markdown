@@ -4,7 +4,7 @@ published: true
 date:   2014-05-16
 title:  "Sample post 1"
 meta: test meta
-author: Jason Carr
+author: jason
 categories: jason
 comments: true
 tags: test1 test2
