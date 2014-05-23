@@ -7,6 +7,7 @@ meta: test meta
 author: Default Author
 meta: test meta
 categories: jason
+comments: true
 tags: test1 test2
 ---
 
