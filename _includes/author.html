@@ -1,10 +1,12 @@
 {% assign author = site.data.authors | where: "short", page.author | first %}
 <ul>
-  {% assign posts = site.posts | where: "author", author.short %}
+  {% assign posts = site.posts %}
   {% for post in posts %}
+  {% if post.author == author.short %}
   <li>
     <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><br />
     {% if post.meta %} {{ post.meta }}{% endif %}
   </li>
+  {% endif %}
   {% endfor %}
 </ul>
