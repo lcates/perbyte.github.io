@@ -7,7 +7,7 @@ permalink: /:title/
 
 # Setup
 title: Slightly Innovative
-description: What works at work works because it works not because its work.
+description: What works at work works because it works not because it's work.
 tagline: Better is still better
 url: http://slightlyinnovative.com
 paginate: 5
