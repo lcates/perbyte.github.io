@@ -1,2 +1,6 @@
-{% assign author = site.data.authors | where: "short", include.author | first %}
+{% for node in site.data.authors %}
+  {% if node.short == include.author %}
+    {% assign author = node %}
+  {% endif %}
+{% endfor %}
 <a href="/author/{{ author.short }}/">{{ author.name }}</a>

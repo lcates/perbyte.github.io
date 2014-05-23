@@ -1,4 +1,9 @@
-{% assign author = site.data.authors | where: "short", page.author | first %}
+{% for node in site.data.authors %}
+  {% if node.short == page.author %}
+    {% assign author = node %}
+  {% endif %}
+{% endfor %}
+
 <ul>
   {% assign posts = site.posts %}
   {% for post in posts %}
