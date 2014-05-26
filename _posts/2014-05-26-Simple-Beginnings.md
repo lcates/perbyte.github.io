@@ -1,14 +1,14 @@
 ---
-layout: post
-published: true
-date:   2014-05-26
-title:  Simple Beginnings
-meta: Yak shaving isn't always bad.
-author: josh
+layout:     post
+date:       2014-05-26
+title:      "Simple Beginnings"
+meta:       Yak shaving isn't always bad
+comments:   false
+author:     josh
 categories:
-comments: false
-tags: personal
+tags:       personal
 ---
+
 
 tl;dr
 -----
