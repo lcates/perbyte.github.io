@@ -5,8 +5,8 @@ layout: default
   <header>
     <h1 class="post-title">{{ page.title }}</h1>
     <span class="post-date">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-      {% if page.author %} &bull; {% include post-author.html author = page.author %}{% endif %}
+      <time class="dateline" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+      {% if page.author %} &bull; <span class="byline-name">{% include post-author.html author = page.author %}</span>{% endif %}
       {% if page.meta %} &bull; {{ page.meta }}{% endif %}
     </span>
   </header>
