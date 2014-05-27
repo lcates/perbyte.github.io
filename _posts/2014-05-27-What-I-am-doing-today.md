@@ -23,7 +23,7 @@ So while I'm not [keeping up with the Joneses][kuwtj] and I can't brag about my 
 
 In short, I really don't like to repeat myself. In a weird half-anti-anti-proverb way I've boiled down my general approach to things I have to do as:
 
-> This thing that I'm doing or am about to do. I don't want do it tomorrow.
+> This thing that I'm doing or am about to do. I don't want to do it tomorrow.
 
 > Or the next day.
 
@@ -39,7 +39,7 @@ A million years ago I read [an article][jscs] that gave me language to use when 
 
 While Joel is specifically referring to software and customer service I take his use of the word *everything* literally. A [DRY][dry] principle for life. This isn't a strategy for [getting things done][gtd] and it isn't a [mental trick][rp] for getting more things done. It's not even a goal for having nothing to do. It's simply an approach where you *think a little harder to find the deeper solution.*
 
-- **Kids, coworkers and parents:** They're more capable then we give them credit for. Actually learn the difference between helping and doing. It's not just teaching them how to fish. It's putting them in a position they can figure it out themselves.
+- **Kids, coworkers and parents:** They're more capable than we give them credit for. Actually learn the difference between helping and doing. It's not just teaching them how to fish. It's putting them in a position they can figure it out themselves.
 - **Life:** Be selfish and do something to improve your tomorrow. The [grass is greener][sgf] and the fish are more plentiful, I promise.
 - **Communication:** [Save your fingers][hks]. This is where people learn to fish and where you can remember if you've forgotten how.
 - **Work:** Why are we still fishing? Why aren't we making it so we don't have to fish? There are bigger fish in the sea!
