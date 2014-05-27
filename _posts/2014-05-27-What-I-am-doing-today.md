@@ -1,6 +1,6 @@
 ---
 layout:     post
-date:       2014-05-26
+date:       2014-05-27
 title:      "What am I doing today?"
 meta:       "And why I'll still be doing it tomorrow"
 comments:   true
