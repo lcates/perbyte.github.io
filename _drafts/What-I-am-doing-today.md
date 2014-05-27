@@ -15,11 +15,11 @@ As a child there was a sign in my house that read
 
 > \- [Mark Twain][mtq]
 
-This family mantra has applied itself to most aspects of my life. I am one of those persons who, in general, would do the bare minimum to get by. In school this meant I would get the *"doesn't apply himself"* and *"shows potential"* comments on my report cards. In college this meant a pretty mediocre GPA.
+This family mantra has applied itself to most aspects of my life. I am one of those persons who, in general, would do the bare minimum to get by. In school, this meant I would get the *"doesn't apply himself"* and *"shows potential"* comments on my report cards. In college, this meant a pretty mediocre GPA.
 
-As I got older and got a house I turned into that neighbor that mows after the dandelions have already seeded and blown around. I'm almost always the last to rake (*I once received an anonymous note in my mailbox reminding me what* ***everyone*** *else in the neighborhood does with their leaves*).
+As I grew older and got a house I turned into that neighbor who mows after the dandelions have already seeded and blown around. I'm almost always the last to rake (*I once received an anonymous note in my mailbox reminding me what* ***everyone*** *else in the neighborhood does with their leaves*).
 
-So while I'm not [keeping up with the Joneses][kuwtj] and I can't brag about my academic history I know that this has been a boon for my approach as a software developer, entrepreneur, father and human being.
+So while I'm not [keeping up with the Joneses][kuwtj] and I can't brag about my academic history, I know that this has been a boon for my approach as a software developer, entrepreneur, father and human being.
 
 In short, I really don't like to repeat myself. In a weird half-anti-anti-proverb way I've boiled down my general approach to things I have to do as:
 
@@ -39,10 +39,10 @@ A million years ago I read [an article][jscs] that gave me language to use when 
 
 While Joel is specifically referring to software and customer service I take his use of the word *everything* literally. A [DRY][dry] principle for life. This isn't a strategy for [getting things done][gtd] and it isn't a [mental trick][rp] for getting more things done. It's not even a goal for having nothing to do. It's simply an approach where you *think a little harder to find the deeper solution.*
 
-- **Kids, coworkers, and parents:** They're more capable then we give them credit for. Actually learn the difference between helping and doing. It's not just teaching them how to fish. It's putting them in a position they can figure it out themselves.
+- **Kids, coworkers and parents:** They're more capable then we give them credit for. Actually learn the difference between helping and doing. It's not just teaching them how to fish. It's putting them in a position they can figure it out themselves.
 - **Life:** Be selfish and do something to improve your tomorrow. The [grass is greener][sgf] and the fish are more plentiful, I promise.
 - **Communication:** [Save your fingers][hks]. This is where people learn to fish and where you can remember if you've forgotten how.
-- **Work:** Why are we still fishing? Why aren't we making it so we don't have to fish? There are bigger fish in the see!
+- **Work:** Why are we still fishing? Why aren't we making it so we don't have to fish? There are bigger fish in the sea!
 - *&lt;insert your own swimmingly great ideas here&gt;*
 
 I work every day with the goal of not having to do so tomorrow. I've been failing at this for a long time. Yet today is almost always the best day I've ever had.
