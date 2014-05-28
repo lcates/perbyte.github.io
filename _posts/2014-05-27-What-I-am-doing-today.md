@@ -3,6 +3,7 @@ layout:     post
 date:       2014-05-27
 title:      "What am I doing today?"
 meta:       "And why I'll still be doing it tomorrow"
+description: "I work every day with the goal of not having to do so tomorrow. I've been failing at this for a long time. Yet today is almost always the best day I've ever had."
 comments:   true
 author:     josh
 categories:

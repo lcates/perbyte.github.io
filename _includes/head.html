@@ -4,7 +4,7 @@
   <title>{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
   <meta name="keywords" content="{{ page.keywords }}">
   <meta name="description" content="{{ page.description }}">
-<meta name="title" content="{% if page.title == "Home" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+  <meta name="title" content="{% if page.title == "Home" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -19,11 +19,14 @@
 
   <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{% if page.title == "Home" %}/{% else %}{{ page.url }}{% endif %}">
 
   <meta name="copyright" content="Copyrighted. All rights reserved.">
 
   <meta property="og:site_name" content="Slightly Innovative">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{% if page.title == "Home" %}/{% else %}{{ page.url }}{% endif %}"
+  <meta property="og:type" content="{% if page.title == "Home" %}website{% else %}article{% endif %}">
   <meta property="og:title" content="{% if page.title != "Home" %}{{ page.title }} - {% endif %}{{ site.title }}">
   <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:image" content="/public/image/logo_184x184.png">
+  <meta property="og:image" content="{{ site.url }}/public/image/logo_184x184.png">
 </head>
