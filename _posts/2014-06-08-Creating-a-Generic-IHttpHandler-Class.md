@@ -22,7 +22,7 @@ If you're like me and just want the code, you can easily view the entire base cl
 What is an ASP.NET generic handler?
 -----------------------------------
 
-In ASP.NET, generic handlers are typically used in situations where standard web page functionality doesn't fully apply. For example, they can be used to return XML or JSON data to be picked up by another page or application, they can be used similarly to a web service to receive and send data, or they can always be used in the ways Aptify intended: to dynamically size and process images or for file downloads.
+In ASP.NET, generic handlers are typically used in situations where standard web page functionality doesn't fully apply. For example, they can be used to return XML or JSON data to be picked up by another page or application, they can be used similarly to a web service to receive and send data, or they can always be used in the ways Aptify intended: to dynamically size and process images or file downloads.
 
 Generic handlers are extremely flexible and can be used in pretty much any situation that lives outside of the bounds of a typical ASP.NET web page.
 
@@ -57,12 +57,12 @@ public class HttpHandlerBase : IHttpHandler
 }
 ```
 
-This is a generic handler that does nothing more than output "Hello World" as a text file. The ProcessRequest method is the entry point, and simply sets the returned content type to "text/plain" (which represents a simple text file), and writes "Hello World" to the response output. Navigating to the URL of this handler would simply show "Hello World" in clear text in your browser.
+This is a generic handler that does nothing more than output "Hello World" as a text file. The ProcessRequest method is the entry point for a request. We simply set the returned content type to "text/plain" (which represents a simple text file), and write "Hello World" to the response output. Navigating to the URL of this handler would simply show "Hello World" in clear text in your browser.
 
 The IsReusable property specifies whether or not an existing instance of the class can be re-used for another request. The safest value to use here is false, which specifies that a new instance of our HttpHandlerBase class will be created for every request. This is safest because reusable handlers must be type safe and are often accessed concurrently, so saving state in your handler can become an issue. However, performance can obviously be gained by setting this value to true if you are careful not to run into these issues.
 
-Allowing for Easy Implementations of Extended Classes
------------------------------------------------------
+Allowing for Easy Implementations
+---------------------------------
 
 Obviously the goal for our base class is to provide base functionality and make it easy to extend the class. Let's add in some code to help out:
 
@@ -135,13 +135,13 @@ public abstract class HttpHandlerBase : IHttpHandler
 
 ```
 
-Here we've added a new ContentMimeType property, two new protected methods for child classes to override, and of course made some changes to our ProcessRequest method. Let's first take a look at the two methods to be overridden.
+Here we've added a new ContentMimeType property, two new protected methods for child classes to override, and of course we've made some changes to our ProcessRequest method. Let's first take a look at the two methods to be overridden.
 
 The ProcessRequestCore method is an abstract method, which means that it must be overridden by any child classes. This is where our child classes will put their logic, not having to worry about any of the details of the generic handler.  The ValidateParameters method by default just returns true indicating that everything is fine and the request should proceed without errors. However, child classes can override this method to check for query string parameters, etc., and can return false, which will of course result in an internal server error.
 
-We've also added the ContentMimeType property, which can also be overridden by child classes to specify the type of data that is returned from the request. For example, if a PNG image is returned, this could be overridden to specify a mime type of "image/png". Mime types are simply a way of specifying what type of file is returned; the possible values can be easily looked up on the web.
+We've also added the ContentMimeType property, which can also be overridden by child classes to specify the type of data that is returned from the request. For example, if a PNG image is returned, this could be overridden to specify a mime type of "image/png". Mime types are simply a way of specifying what type of file is returned; possible values can be easily looked up on the web.
 
-Finally, the changes to our ProcessRequest method basically just call our ValidateParameters method and return with an internal server error if necessary, hook up the mime type from the property, and call our new ProcessRequestCore method. Simple enough?
+Finally, the changes to our ProcessRequest method basically just call our ValidateParameters method and return with an internal server error if necessary, hook up the mime type from the property, and call our new ProcessRequestCore method.
 
 Access to Aptify
 ----------------
@@ -179,7 +179,8 @@ Providing access to Aptify basically just means adding properties for the EBusin
         {
             if (this.aptifyApplication == null)
             {
-                this.aptifyApplication = this.EBusinessGlobal.GetAptifyApplication(HttpContext.Current.Application, HttpContext.Current.User);
+                this.aptifyApplication = this.EBusinessGlobal.GetAptifyApplication(
+                    HttpContext.Current.Application, HttpContext.Current.User);
             }
 
             return this.aptifyApplication;
@@ -195,7 +196,8 @@ Providing access to Aptify basically just means adding properties for the EBusin
         {
             if (this.dataAction == null)
             {
-                this.dataAction = this.EBusinessGlobal.GetDataAction(HttpContext.Current.Application, HttpContext.Current.User);
+                this.dataAction = this.EBusinessGlobal.GetDataAction(
+                    HttpContext.Current.Application, HttpContext.Current.User);
             }
 
             return this.dataAction;
