@@ -14,20 +14,20 @@ First off, as this is my first post, let me introduce myself. I am Josh's #1 peo
 
 So let's talk generic handlers. Aptify does happen to have a base HTTP handler class, but they seem to think that images and downloads are the only reason to use a generic handler, and it's more than a bit awkward to use. This article aims to show you how to create a proper base HTTP handler class that is easy to use and provides full access to Aptify.
 
-tl; dr
-======
+tl;dr
+-----
 
 If you're like me and just want the code, you can easily view the entire base class code [right here][code].
 
 What is an ASP.NET generic handler?
-===================================
+-----------------------------------
 
 In ASP.NET, generic handlers are typically used in situations where standard web page functionality doesn't fully apply. For example, they can be used to return XML or JSON data to be picked up by another page or application, they can be used similarly to a web service to receive and send data, or they can always be used in the ways Aptify intended: to dynamically size and process images or for file downloads.
 
 Generic handlers are extremely flexible and can be used in pretty much any situation that lives outside of the bounds of a typical ASP.NET web page.
 
 Diving In
-=========
+---------
 
 Let's start with what's required for the most basic implementation of a generic handler:
 
@@ -62,7 +62,7 @@ This is a generic handler that does nothing more than output "Hello World" as a 
 The IsReusable property specifies whether or not an existing instance of the class can be re-used for another request. The safest value to use here is false, which specifies that a new instance of our HttpHandlerBase class will be created for every request. This is safest because reusable handlers must be type safe and are often accessed concurrently, so saving state in your handler can become an issue. However, performance can obviously be gained by setting this value to true if you are careful not to run into these issues.
 
 Allowing for Easy Implementations of Extended Classes
-=====================================================
+-----------------------------------------------------
 
 Obviously the goal for our base class is to provide base functionality and make it easy to extend the class. Let's add in some code to help out:
 
@@ -144,7 +144,7 @@ We've also added the ContentMimeType property, which can also be overridden by c
 Finally, the changes to our ProcessRequest method basically just call our ValidateParameters method and return with an internal server error if necessary, hook up the mime type from the property, and call our new ProcessRequestCore method. Simple enough?
 
 Access to Aptify
-================
+----------------
 
 Providing access to Aptify basically just means adding properties for the EBusinessGlobal, AptifyApplication, and DataAction objects:
 
@@ -207,7 +207,7 @@ Providing access to Aptify basically just means adding properties for the EBusin
 Here we have three protected properties and three private variables: one each for EBusinessGlobal, AptifyApplication, and DataAction. The properties are set up so that the private variables will be instantiated only once, and only when necessary, saving the class from the potential performance hits of multiple or unnecessary instantiations.  The EbusinessGlobal object is used to instantiate the AptifyApplication and DataAction objects.
 
 Finally, Default to No Cache
-============================
+----------------------------
 
 The only thing left to do is to set the response's cache policy:
 
@@ -265,7 +265,7 @@ Of course, don't forget that we also need to change our ProcessRequest method to
 ```
 
 Ready, Set, Go
-==============
+--------------
 
 Now that the base class is ready to go, creating a generic handler will be as easy as inheriting from our HttpHandlerBase class and doing whatever we need to do in the ProcessRequestBase method. Of course, we can also override ContentMimeType and ValidateParameters like so:
 
