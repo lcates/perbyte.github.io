@@ -10,9 +10,9 @@ categories:
 tags:       aptify asp.net
 ---
 
-First off, as this is my first post, let me introduce myself. I am Josh's #1 peon, er, esteemed colleague, at [PerByte][perb]. We've made careers out of customizing and extending [Aptify][apt] both on and off the web (though obviously our careers expand well past the bounds of Aptify).
+First off, as this is my first post, let me introduce myself. I am a PerByte Peon, er, developer at [PerByte][perb]. We customize and extend [Aptify][apt] (among other things) both on and off the web for a living (though obviously my career expands well past the bounds of Aptify).
 
-So let's talk generic handlers. Aptify does happen to have a base HTTP handler class, but they seem to think that images and downloads are the only reason to use a generic handler, and it's more than a bit awkward to use. This article aims to show you how to create a proper base HTTP handler class that is easy to use and provides full access to Aptify.
+So let's talk generic handlers. Aptify has a some base HTTP handlers, but they seem to think that images and downloads are the only reason to use one, and it's more than a bit awkward to use. Awkward image and download handlers are soo last year so let's create a proper base HTTP handler class that is easy to use while providing full access to Aptify.
 
 tl;dr
 -----
@@ -31,7 +31,7 @@ Diving In
 
 Let's start with what's required for the most basic implementation of a generic handler:
 
-```C#
+{% highlight c# %}
 using System;
 using System.Web;
 
@@ -42,7 +42,7 @@ public class HttpHandlerBase : IHttpHandler
     /// </summary>
     public virtual bool IsReusable
     {
-        get { return false; }
+        get { return true; }
     }
 
     /// <summary>
@@ -55,235 +55,199 @@ public class HttpHandlerBase : IHttpHandler
         context.Response.Write("Hello World");
     }
 }
-```
+{% endhighlight %}
 
-This is a generic handler that does nothing more than output "Hello World" as a text file. The ProcessRequest method is the entry point for a request. We simply set the returned content type to "text/plain" (which represents a simple text file), and write "Hello World" to the response output. Navigating to the URL of this handler would simply show "Hello World" in clear text in your browser.
+In this quintessential example we're dumping `Hello World` as text. The `ProcessRequest` method is the entry point for a request. We set the returned content type to `text/plain` and write `Hello World` to the response output. Navigating to the URL of this handler would simply show `Hello World` in clear text in your browser.
 
-The IsReusable property specifies whether or not an existing instance of the class can be re-used for another request. The safest value to use here is false, which specifies that a new instance of our HttpHandlerBase class will be created for every request. This is safest because reusable handlers must be type safe and are often accessed concurrently, so saving state in your handler can become an issue. However, performance can obviously be gained by setting this value to true if you are careful not to run into these issues.
+The `IsReusable` property specifies whether or not an existing instance of the class can be re-used for another request. We're returning `true` for the performance benefits as this avoids the need for a new instance of our handler being created for every request. If you need to store local state or don't want to concern yourself with concurrency issues feel free to override and return `false`.
 
 Allowing for Easy Implementations
 ---------------------------------
 
 Obviously the goal for our base class is to provide base functionality and make it easy to extend the class. Let's add in some code to help out:
 
-```C#
+{% highlight c# %}
+/// <summary>
+/// Gets the MIME type of the response for this request.
+/// </summary>
+protected virtual string ContentMimeType
+{
+    get { return "text/html"; }
+}
+{% endhighlight %}
 
-using System;
-using System.Net;
-using System.Web;
+We'll use this later, but this allows child classes to specify the type of data that is returned from the handler. For example, if a PNG image is returned, this could be overridden to return `image/png`. Mime types are simply a way of specifying what type of data is returned; possible values can be easily [looked up on the web][iana].
+
+{% highlight c# %}
+/// <summary>
+/// Processes the incoming HTTP request.
+/// </summary>
+/// <param name="context">The <see cref="HttpContext"/> for the request.</param>
+protected abstract void ProcessRequestCore(HttpContext context);
 
 /// <summary>
-/// Base class for custom <see cref="IHttpHandler"/> implementations that need access to Aptify.
+/// Validates the incoming parameters.  Defaults to <b>true</b>.
 /// </summary>
-public abstract class HttpHandlerBase : IHttpHandler
+/// <param name="context">The <see cref="HttpContext"/> for the request.</param>
+/// <returns><b>True</b> if not implemented.</returns>
+protected virtual bool ValidateParameters(HttpContext context)
 {
-    /// <summary>
-    /// Gets a value indicating whether this instance can be reused between successive requests.
-    /// </summary>
-    public virtual bool IsReusable
-    {
-        get { return false; }
-    }
-
-    /// <summary>
-    /// Gets the MIME type of the response for this request.
-    /// </summary>
-    protected virtual string ContentMimeType
-    {
-        get { return "text/html"; }
-    }
-
-    /// <summary>
-    /// Process the incoming HTTP request.
-    /// </summary>
-    /// <param name="context">The <see cref="HttpContext"/> for the request.</param>
-    public void ProcessRequest(HttpContext context)
-    {
-        if (context == null)
-        {
-            throw new ArgumentNullException("context");
-        }
-
-        if (!this.ValidateParameters(context))
-        {
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            context.Response.End();
-            return;
-        }
-
-        context.Response.ContentType = this.ContentMimeType;
-
-        this.ProcessRequestCore(context);
-    }
-
-    /// <summary>
-    /// Processes the incoming HTTP request.
-    /// </summary>
-    /// <param name="context">The <see cref="HttpContext"/> for the request.</param>
-    protected abstract void ProcessRequestCore(HttpContext context);
-
-    /// <summary>
-    /// Validates the incoming parameters.  Defaults to <b>true</b>.
-    /// </summary>
-    /// <param name="context">The <see cref="HttpContext"/> for the request.</param>
-    /// <returns><b>True</b> if not implemented.</returns>
-    protected virtual bool ValidateParameters(HttpContext context)
-    {
-        return true;
-    }
+    return true;
 }
+{% endhighlight %}
 
-```
+The `ProcessRequestCore` method is an abstract method, which means that it must be overridden by any child classes. This is where our child classes will put their logic, not having to worry about any of the details of the generic handler.  The `ValidateParameters` method returns `true` indicating that everything is fine and the request should proceed without errors. Implementors can override this method to check for query string parameters, return `false`, and let it explode with an internal server error.
 
-Here we've added a new ContentMimeType property, two new protected methods for child classes to override, and of course we've made some changes to our ProcessRequest method. Let's first take a look at the two methods to be overridden.
+{% highlight c# %}
+/// <summary>
+/// Process the incoming HTTP request.
+/// </summary>
+/// <param name="context">The <see cref="HttpContext"/> for the request.</param>
+public void ProcessRequest(HttpContext context)
+{
+    if (context == null)
+    {
+        throw new ArgumentNullException("context");
+    }
 
-The ProcessRequestCore method is an abstract method, which means that it must be overridden by any child classes. This is where our child classes will put their logic, not having to worry about any of the details of the generic handler.  The ValidateParameters method by default just returns true indicating that everything is fine and the request should proceed without errors. However, child classes can override this method to check for query string parameters, etc., and can return false, which will of course result in an internal server error.
+    if (!this.ValidateParameters(context))
+    {
+        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        context.Response.End();
+        return;
+    }
 
-We've also added the ContentMimeType property, which can also be overridden by child classes to specify the type of data that is returned from the request. For example, if a PNG image is returned, this could be overridden to specify a mime type of "image/png". Mime types are simply a way of specifying what type of file is returned; possible values can be easily looked up on the web.
+    context.Response.ContentType = this.ContentMimeType;
 
-Finally, the changes to our ProcessRequest method basically just call our ValidateParameters method and return with an internal server error if necessary, hook up the mime type from the property, and call our new ProcessRequestCore method.
+    this.ProcessRequestCore(context);
+}
+{% endhighlight %}
+
+Finally, modifying the `ProcessRequest` to use what we've added and pass control over to `ProcessRequestCore`. At this point we have a fairly *generic* generic handler. This is likely in your arsenal already; it's certainly [in ours][pbcoreh] (with a few more bells and a few less whistles).
 
 Access to Aptify
 ----------------
 
 Providing access to Aptify basically just means adding properties for the EBusinessGlobal, AptifyApplication, and DataAction objects:
 
-```C#
-
-    private EBusinessGlobal ebusinessGlobal;
-    private AptifyApplication aptifyApplication;
-    private DataAction dataAction;
-
-    /// <summary>
-    /// Gets the Aptify EBusiness Global object.
-    /// </summary>
-    protected EBusinessGlobal EBusinessGlobal
+{% highlight c# %}
+/// <summary>
+/// Gets the Aptify EBusiness Global object.
+/// </summary>
+protected EBusinessGlobal EBusinessGlobal
+{
+    get
     {
-        get
+        var ebusinessGlobal =
+          HttpContext.Current.Items["PB_EBusinessGlobal"] as EBusinessGlobal;
+
+        if (ebusinessGlobal == null)
         {
-            if (this.ebusinessGlobal == null)
-            {
-                this.ebusinessGlobal = new EBusinessGlobal();
-            }
-
-            return this.ebusinessGlobal;
+            HttpContext.Current.Items["PB_EBusinessGlobal"] =
+              ebusinessGlobal =
+              new EBusinessGlobal();
         }
-    }
 
-    /// <summary>
-    /// Gets the Aptify Application object.
-    /// </summary>
-    protected AptifyApplication AptifyApplication
+        return ebusinessGlobal;
+    }
+}
+
+/// <summary>
+/// Gets the Aptify Application object.
+/// </summary>
+protected AptifyApplication AptifyApplication
+{
+    get
     {
-        get
+        var aptifyApplication =
+          HttpContext.Current.Items["PB_AptifyApplication"] as AptifyApplication;
+
+        if (aptifyApplication == null)
         {
-            if (this.aptifyApplication == null)
-            {
-                this.aptifyApplication = this.EBusinessGlobal.GetAptifyApplication(
-                    HttpContext.Current.Application, HttpContext.Current.User);
-            }
-
-            return this.aptifyApplication;
+            HttpContext.Current.Items["PB_AptifyApplication"] =
+              aptifyApplication =
+              this.EBusinessGlobal.GetAptifyApplication(
+                HttpContext.Current.Application, HttpContext.Current.User);
         }
-    }
 
-    /// <summary>
-    /// Gets the Aptify Data Action object.
-    /// </summary>
-    protected DataAction DataAction
+        return aptifyApplication;
+    }
+}
+
+/// <summary>
+/// Gets the Aptify Data Action object.
+/// </summary>
+protected DataAction DataAction
+{
+    get
     {
-        get
+        var dataAction =
+          HttpContext.Current.Items["PB_DataAction"] as DataAction;
+
+        if (dataAction == null)
         {
-            if (this.dataAction == null)
-            {
-                this.dataAction = this.EBusinessGlobal.GetDataAction(
-                    HttpContext.Current.Application, HttpContext.Current.User);
-            }
-
-            return this.dataAction;
+            HttpContext.Current.Items["PB_DataAction"] =
+              dataAction =
+              this.EBusinessGlobal.GetDataAction(
+                HttpContext.Current.Application, HttpContext.Current.User);
         }
+
+        return dataAction;
     }
+}
+{% endhighlight %}
 
-```
+Here we have three protected properties for `EBusinessGlobal`, `AptifyApplication`, and `DataAction`. This gives child classes quick access to the main Aptify entry points. Lazy loading them into a per-request cache avoids unnecessary or multiple instantiations.
 
-Here we have three protected properties and three private variables: one each for EBusinessGlobal, AptifyApplication, and DataAction. The properties are set up so that the private variables will be instantiated only once, and only when necessary, saving the class from the potential performance hits of multiple or unnecessary instantiations.  The EbusinessGlobal object is used to instantiate the AptifyApplication and DataAction objects.
+> **Pro-tip**
+> We have noticed a 20-200ms overhead for instantiations of `AptifyApplication` and `DataAction`. Reuse and pass these around in your requests to save yourself and your users a measurable amount of time. Storing them in `HttpContext.Current.Items` makes it easy.
 
 Finally, Default to No Cache
 ----------------------------
 
 The only thing left to do is to set the response's cache policy:
 
-```C#
-
-    /// <summary>
-    /// Sets the cacheability of the response.  Defaults to none.
-    /// </summary>
-    /// <param name="cache">The policy object.</param>
-    protected virtual void SetResponseCachePolicy(HttpCachePolicy cache)
+{% highlight c# %}
+/// <summary>
+/// Sets the cacheability of the response.  Defaults to none.
+/// </summary>
+/// <param name="cache">The policy object.</param>
+protected virtual void SetResponseCachePolicy(HttpCachePolicy cache)
+{
+    if (cache == null)
     {
-        if (cache == null)
-        {
-            throw new ArgumentNullException("cache");
-        }
-
-        cache.SetCacheability(HttpCacheability.NoCache);
-        cache.SetNoStore();
-        cache.SetExpires(DateTime.MinValue);
+        throw new ArgumentNullException("cache");
     }
 
-```
+    cache.SetCacheability(HttpCacheability.NoCache);
+    cache.SetNoStore();
+    cache.SetExpires(DateTime.MinValue);
+}
+{% endhighlight %}
 
-This new method can of course be overridden by implementations of the class, but by default it sets the response to disable caching. This is most often ideal because we want to make sure that the server code runs for every request. We may have gone a little overboard here by calling all three of the above HttpCachePolicy methods, but our experience has shown that all three have been needed in various scenarios.
+This new method can of course be overridden by implementations of the class, but by default it sets the response to disable caching. This is most often ideal because we want to make sure that the server code runs for every request. We may have gone a little overboard here by calling all three of the above `HttpCachePolicy` methods, but our experience has shown that all three have been needed in various scenarios.
 
-Of course, don't forget that we also need to change our ProcessRequest method to add a line to call our new SetResponseCachePolicy method:
+Of course, don't forget that we also need to change our `ProcessRequest` method to add a line to call our new `SetResponseCachePolicy` method:
 
-```C#
+{% highlight c# %}
+this.SetResponseCachePolicy(context.Response.Cache);
+{% endhighlight %}
 
-    /// <summary>
-    /// Process the incoming HTTP request.
-    /// </summary>
-    /// <param name="context">The <see cref="HttpContext"/> for the request.</param>
-    public void ProcessRequest(HttpContext context)
-    {
-        if (context == null)
-        {
-            throw new ArgumentNullException("context");
-        }
-
-        this.SetResponseCachePolicy(context.Response.Cache);
-
-        if (!this.ValidateParameters(context))
-        {
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            context.Response.End();
-            return;
-        }
-
-        context.Response.ContentType = this.ContentMimeType;
-
-        this.ProcessRequestCore(context);
-    }
-
-```
+And that, my friends, [is good enough][code].
 
 Ready, Set, Go
 --------------
 
-Now that the base class is ready to go, creating a generic handler will be as easy as inheriting from our HttpHandlerBase class and doing whatever we need to do in the ProcessRequestBase method. Of course, we can also override ContentMimeType and ValidateParameters like so:
+Now that the base class is ready to go, creating a generic handler will be as easy as inheriting from our `HttpHandlerBase` class and doing whatever we need to do in the `ProcessRequestBase` method. Of course, we can also override `ContentMimeType` and `ValidateParameters` like so:
 
-```C#
-
+{% highlight c# %}
 using System.Web;
 
 public class CustomHandler : HttpHandlerBase
 {
     protected override string ContentMimeType
     {
-        get
-        {
-            // Perhaps we're returning XML for this request?
-            return "text/xml";
-        }
+        get { return "application/json"; }
     }
 
     protected override void ProcessRequestCore(HttpContext context)
@@ -293,15 +257,15 @@ public class CustomHandler : HttpHandlerBase
 
     protected override bool ValidateParameters(HttpContext context)
     {
-        // Anything we need to validate?
         return true;
     }
 }
-
-```
+{% endhighlight %}
 
 There we have it. We'll look at some of the possibilities of how to use this in the real world in future posts. Until then, au revoir.
 
 [perb]: http://www.perbyte.com/
 [code]: https://gist.github.com/jasondavidcarr/53b081d59372878660b7
 [apt]: http://www.aptify.com/
+[iana]: http://www.iana.org/assignments/media-types/media-types.xhtml
+[pbcoreh]: https://github.com/perbyte/pb-core/blob/master/src/PerByte.Core.Web/HttpHandlerBase.cs
