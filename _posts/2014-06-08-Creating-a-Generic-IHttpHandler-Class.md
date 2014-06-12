@@ -31,7 +31,7 @@ Diving In
 
 Let's start with what's required for the most basic implementation of a generic handler:
 
-```C#
+{% highlight c# %}
 using System;
 using System.Web;
 
@@ -55,7 +55,7 @@ public class HttpHandlerBase : IHttpHandler
         context.Response.Write("Hello World");
     }
 }
-```
+{% endhighlight %}
 
 Here we're simply dumping `Hello World` as text. The `ProcessRequest` method is the entry point for a request. We set the returned content type to `text/plain` and write `Hello World` to the response output. Navigating to the URL of this handler would simply show `Hello World` in clear text in your browser.
 
@@ -66,7 +66,7 @@ Allowing for Easy Implementations
 
 Obviously the goal for our base class is to provide base functionality and make it easy to extend the class. Let's add in some code to help out:
 
-```C#
+{% highlight c# %}
 /// <summary>
 /// Gets the MIME type of the response for this request.
 /// </summary>
@@ -74,11 +74,11 @@ protected virtual string ContentMimeType
 {
     get { return "text/html"; }
 }
-```
+{% endhighlight %}
 
 We'll use this later, but this allows child classes to specify the type of data that is returned from the handler. For example, if a PNG image is returned, this could be overridden to return `image/png`. Mime types are simply a way of specifying what type of data is returned; possible values can be easily [looked up on the web][iana].
 
-```C#
+{% highlight c# %}
 /// <summary>
 /// Processes the incoming HTTP request.
 /// </summary>
@@ -94,11 +94,11 @@ protected virtual bool ValidateParameters(HttpContext context)
 {
     return true;
 }
-```
+{% endhighlight %}
 
 The `ProcessRequestCore` method is an abstract method, which means that it must be overridden by any child classes. This is where our child classes will put their logic, not having to worry about any of the details of the generic handler.  The `ValidateParameters` method returns `true` indicating that everything is fine and the request should proceed without errors. Implementors can override this method to check for query string parameters, return `false`, and let it explode with an internal server error.
 
-```C#
+{% highlight c# %}
 /// <summary>
 /// Process the incoming HTTP request.
 /// </summary>
@@ -121,7 +121,7 @@ public void ProcessRequest(HttpContext context)
 
     this.ProcessRequestCore(context);
 }
-```
+{% endhighlight %}
 
 Finally, we're modifying the `ProcessRequest` method to use what we've added and pass control over to `ProcessRequestCore`. At this point we have a fairly *generic* generic handler. This is likely in your arsenal already; it's certainly [in ours][pbcoreh] (with a few more bells and a few less whistles).
 
@@ -130,7 +130,7 @@ Access to Aptify
 
 Providing access to Aptify basically just means adding properties for the EBusinessGlobal, AptifyApplication, and DataAction objects:
 
-```C#
+{% highlight c# %}
 /// <summary>
 /// Gets the Aptify EBusiness Global object.
 /// </summary>
@@ -195,7 +195,7 @@ protected DataAction DataAction
         return dataAction;
     }
 }
-```
+{% endhighlight %}
 
 Here we have three protected properties for `EBusinessGlobal`, `AptifyApplication`, and `DataAction`. This gives child classes quick access to the main Aptify entry points. Lazy loading them into a per-request cache avoids unnecessary or multiple instantiations.
 
@@ -207,7 +207,7 @@ Finally, Default to No Cache
 
 The only thing left to do is to set the response's cache policy:
 
-```C#
+{% highlight c# %}
 /// <summary>
 /// Sets the cacheability of the response.  Defaults to none.
 /// </summary>
@@ -223,15 +223,15 @@ protected virtual void SetResponseCachePolicy(HttpCachePolicy cache)
     cache.SetNoStore();
     cache.SetExpires(DateTime.MinValue);
 }
-```
+{% endhighlight %}
 
 This new method can of course be overridden by implementations of the class, but by default it sets the response to disable caching. Most often, this is ideal because we want to make sure that the server code runs for every request. We may have gone a little overboard here by calling all three of the above `HttpCachePolicy` methods, but our experience has shown that all three have been needed in various scenarios.
 
 Of course, don't forget that we also need to change our `ProcessRequest` method to add a line to call our new `SetResponseCachePolicy` method:
 
-```C#
+{% highlight c# %}
 this.SetResponseCachePolicy(context.Response.Cache);
-```
+{% endhighlight %}
 
 And that, my friends, [is good enough][code].
 
@@ -240,7 +240,7 @@ Ready, Set, Go
 
 Now that the base class is ready to go, creating a generic handler will be as easy as inheriting from our `HttpHandlerBase` class and doing whatever we need to do in the `ProcessRequestBase` method. Of course, we can also override `ContentMimeType` and `ValidateParameters` like so:
 
-```C#
+{% highlight c# %}
 using System.Web;
 
 public class CustomHandler : HttpHandlerBase
@@ -260,7 +260,7 @@ public class CustomHandler : HttpHandlerBase
         return true;
     }
 }
-```
+{% endhighlight %}
 
 There we have it. We'll look at some of the possibilities of how to use this in the real world in future posts. Until then, au revoir.
 
