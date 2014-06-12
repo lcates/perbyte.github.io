@@ -59,7 +59,7 @@ public class HttpHandlerBase : IHttpHandler
 
 Here we're simply dumping `Hello World` as text. The `ProcessRequest` method is the entry point for a request. We set the returned content type to `text/plain` and write `Hello World` to the response output. Navigating to the URL of this handler would simply show `Hello World` in clear text in your browser.
 
-The `IsReusable` property specifies whether or not an existing instance of the class can be re-used for another request. We're returning `true` for the performance benefits as this avoids the need for a new instance of our handler being created for every request. If you need to store local state or don't want to concern yourself with concurrency issues feel free to override and return `false`.
+The `IsReusable` property specifies whether or not an existing instance of the class can be re-used for another request. We're returning `true` for performance benefits as this avoids the need for a new instance of our handler being created for every request. If you need to store local state or don't want to concern yourself with concurrency issues feel free to override and return `false`.
 
 Allowing for Easy Implementations
 ---------------------------------
