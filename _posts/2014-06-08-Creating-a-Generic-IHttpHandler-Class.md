@@ -1,13 +1,13 @@
 ---
-layout:     post
-date:       2014-06-08
-title:      "Creating a Generic IHttpHandler Class for Use with Aptify"
-meta:       ""
+layout:      post
+date:        2014-06-08
+title:       "Creating a Generic IHttpHandler Class for Use with Aptify"
+meta:        "Open Proprietary Custom Generic Handler"
 description: ""
-comments:   true
-author:     jason
+comments:    true
+author:      jason
 categories:
-tags:       aptify asp.net
+tags:        aptify asp.net
 ---
 
 Hi, my name is [Jason Carr][jason], and I'll be the other half of this incredible blog. I'll save the world from a long and boring introduction.
