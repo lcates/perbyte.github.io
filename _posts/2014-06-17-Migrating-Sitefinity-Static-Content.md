@@ -1,12 +1,12 @@
-﻿---
+---
 layout:      post
 date:        2014-06-17
 title:       "Migrating Sitefinity Static Content"
-meta:        ""
+meta:        "A boy and his blob"
 description: ""
 comments:    true
 author:      jason
-categories:
+categories:  
 tags:        sitefinity
 ---
 
@@ -31,7 +31,7 @@ Obviously, you'll need to replace the `SitefinityOld` and `SitefinityNew` databa
 Blowing Chunks
 --------------
 
-Sitefinity apparently uses the `sf_chunks table` to store all of the binary data. Therefore, obviously it's the most massive of the transfers. Here's the script to bring it over:
+Sitefinity apparently uses the `sf_chunks` table to store all of the binary data. Therefore, obviously it's the most massive of the transfers. Here's the script to bring it over:
 
 {% highlight sql %}
 
@@ -65,7 +65,7 @@ tmb_vrsn, parent_id, ordinal, number_of_chunks, tmb_regen, mime_type, item_defau
 folder_id, file_path, file_id, extension, chunk_size, can_inherit_permissions, blob_storage, author_,
 approval_workflow_state_, id, voa_class, voa_version, parts_, width, height, alternative_text_, width2, height2
 FROM SitefinityOld..sf_media_content
- 
+
 INSERT INTO SitefinityNew..sf_approval_tracking_record_map (id, voa_version)
 SELECT id, voa_version
 FROM SitefinityOld..sf_approval_tracking_record_map
@@ -83,7 +83,7 @@ INSERT INTO SitefinityNew..sf_media_thumbnails
 (width, typ, total_size, content_id, nme, mime_type, id, height, file_id, dta, uploaded, number_of_chunks, chunk_size, voa_version)
 SELECT width, typ, total_size, content_id, nme, mime_type, id, height, file_id, dta, uploaded, number_of_chunks, chunk_size, voa_version
 FROM SitefinityOld..sf_media_thumbnails
- 
+
 INSERT INTO SitefinityNew..sf_url_data
 (url, redirect, qery, last_modified, is_default, id, disabled, culture, app_name, voa_version, voa_class, content_id, id2, item_type)
 SELECT url, redirect, qery, last_modified, is_default, id, disabled, culture, app_name, voa_version, voa_class, content_id, id2, item_type
@@ -126,7 +126,7 @@ Did it work?
 
 If all queries ran successfully, you should now have all of your static content in your new Sitefinity installation. Go ahead and log into Sitefinity and confirm that it's all there. Keep in mind that the above scripts transferred everything that I needed for my particular situation, but permissions were not one of them. If you need permissions, you'll need to dive in to figure that piece out yourself. There may also be some further data that I missed, but everything that we were using was brought over just fine.
 
-Let us know in the comments if this did or did not work for you, and if you happen to figure out how to pull the permissions, do us all a favor and post that here as well. :)
+Let us know in the comments if this did or did not work for you, and if you happen to figure out how to pull the permissions, do us all a favor and post that here as well. :smile:
 
 [site]: http://www.sitefinity.com/
 [tel]: http://www.telerik.com/
