@@ -1,0 +1,213 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding-top: 110px;
+    font-size: 16px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-inner {
+    background-color: #373737;
+    background-image: none;
+    filter: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+/*    margin: 0 -20px;     */
+}
+.navbar .nav {
+    margin-top: 30px;
+}
+.navbar .nav > li > a {
+    color: #FFFFFF;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 18px;
+    font-weight:200;
+    transition: color 0.15s ease-in-out 0s;
+}
+.navbar .nav > li > a:hover {
+    color: #1FC8D3;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+    color: #1FC8D3;
+    background-color: transparent;
+    box-shadow: none;
+}
+.navbar .divider-vertical {
+    height: 20px;
+    margin: 12px 2px 0 2px;
+    border-left: 0px solid #626262;
+    border-right: 1px solid #626262;
+}
+.navbar .btn-navbar {
+    height: 18px;
+}
+.navbar .brand {
+    color: #EAEAEA;
+    font-size: 22px;
+    text-shadow: none;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+#home {
+    background-color: #64B429;
+}
+#home h1 {
+    font-size: 25px;
+    margin: 50px 0 70px;
+    color: #fff;
+}
+#home h2 {
+    font-weight: 300;
+    font-size: 23px;
+    color: #eee;
+    margin-top: 50px;
+}
+
+#testimonials {
+    background-color: #5eaa26;
+    padding: 35px 0 35px;
+    margin-top: 50px;
+}
+#testimonials i {
+    font-size: 100px;
+    color: #fff;
+}
+#testimonials blockquote {
+    border: 0;
+    font-size: 30px;
+    color: #fff;
+    line-height: 48px;
+    padding: 0;
+    margin: 0;
+}
+#testimonials blockquote cite {
+    color: #ccc;
+}
+
+#default, #services {
+    background-color: #ddd;
+    color: #373737;
+    padding: 0 0 50px 0;
+}
+#default h1, #default h2, #services h2, #contact-us h2 {
+    font-size: 40px;
+    font-weight: 300;
+    padding: 35px 0 35px;
+}
+#default .polaroid {
+    background-color: #fff;
+    margin: 5px;
+    padding: 15px 15px 0 15px;
+    max-height: 320px;
+    overflow: hidden;
+}
+#default p, #default .polaroid p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+}
+#default .expand {
+    margin: -5px 5px;
+    padding: 10px 15px;
+    background-color: #fff;
+    font-size: 38px;
+}
+#default .expand a,
+#default .expand a:link,
+#default .expand a:active,
+#default .expand a:hover
+{
+    text-decoration: none;
+    color: #333;
+}
+#default .expand a:hover {
+    color: #555;
+}
+
+#services {
+    background-color: #eaeaea;
+}
+#services p {
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 300;
+    text-align: justify;
+}
+#services h3 {
+    margin: 40px 0 30px;
+}
+#services .icons-ul li {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 300;
+}
+#services .read-more {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#contact-us {
+    min-height: 200px;
+    background-color: #373737;
+    color: #eee;
+    font-weight: 300;
+    padding-bottom: 30px;
+}
+#contact-us p {
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 300;
+    text-align: center;
+}
+#contact-us label {
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 300;
+}
+#contact-us input[type=text] {
+    padding: 10px;
+}
+#contact-us label small {
+    color: #999;
+}
+.contact-details address {
+    font-size: 26px;
+    line-height: 45px;
+}
+#contact-us .thanks {
+	color: green;
+}
+#contact-us label.error {
+	color: #f55;
+}
+#contact-us input.error {
+	border: 1px solid red;
+	background-color: #fcc;
+}
+
+#footer {
+    background-color: #333;
+    font-size: 13px;
+    color: #666;
+    padding: 15px 0 0;
+}
+
+@media (max-width: 979px) {
+	body { padding-top: 0; }
+
+	#home, #testimonials, #default, #services, #contact-us, #footer { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
+}
