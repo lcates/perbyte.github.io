@@ -26,9 +26,9 @@ tags:        .net hack
 
 *Use [ILMerge][ilmerge].*
 
-**I forgot to mention that this system I'm working in often runs as an ASP.NET website which means a lot of dynamic compilation. Namespaces are critical, unique ones are good. Now we hae duplicates and many existing pages that I can't control will likely break.**
+**I forgot to mention that this system I'm working in often runs as an ASP.NET website which means a lot of dynamic compilation. Namespaces are critical, unique ones are good. Now we have duplicates and many existing pages that I can't control will likely break.**
 
-*I got it you can try to [embed the assembly][richter].*
+*I got it. You can try to [embed the assembly][richter].*
 
 **Good idea except for that you need to have control over the host and neither the web site nor the actual main application allow for that.**
 
