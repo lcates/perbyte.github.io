@@ -6,7 +6,7 @@ pygments: true
 permalink: /blog/:title/
 
 # Setup
-title: Slightly Innovative
+title: "PerByte: Slightly Innovative"
 description: What works at work works because it works not because it's work.
 tagline: Better is still better
 url: http://slightlyinnovative.com

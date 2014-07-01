@@ -22,3 +22,52 @@ img.emoji {
   display: inline-block;
   margin-top: 7px;
 }
+
+.sidebar {
+  background-color: #3737373;
+}
+
+.sidebar-about h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar-about h2 a span {
+  display: block;
+  font-size: 28px;
+  margin-left: 25px;
+  margin-top: -32px;
+}
+
+.sidebar-about h2 a:hover, .sidebar-about h2 a:active {
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 927px) {
+
+  .sidebar-about h2 a span {
+    font-size: 24px;
+    margin-top: -26px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .sidebar-about h2 a img {
+    margin: 0 auto 1rem auto;
+  }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c14dec... Merging sites
+  .sidebar-about h2 a span {
+    font-size: 28px;
+  }
+
+<<<<<<< HEAD
+=======
+>>>>>>> a902402... Merging sites
+=======
+>>>>>>> 1c14dec... Merging sites
+}

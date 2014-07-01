@@ -1,16 +1,18 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}/">
-          {{ site.title }}
+      <h2>
+        <a href="{{ site.baseurl }}/blog">
+          <img src="/corporate/img/perbyte-logo.png" alt="{{ site.title }}" />
+          <span>Slightly Innovative</span>
         </a>
-      </h1>
+      </h2>
       <p class="lead">{{ site.description }}</p>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">PerByte</a>
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/blog">Home</a>
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
