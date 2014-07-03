@@ -9,14 +9,14 @@ permalink: /blog/:title/
 title: "PerByte: Slightly Innovative"
 description: What works at work works because it works not because it's work.
 tagline: Better is still better
-url: http://slightlyinnovative.com
+url: http://www.perbyte.com
 paginate: 5
 
 # Custom vars
 disqus_short_name: slightlyinnovative
 version: 1.0.0
 github:
-  repo: https://github.com/slightly-innovative/slightly-innovative.github.io
+  repo: https://github.com/sperbyte/perbyte.github.io
 
 baseurl: ""
 encoding: utf-8

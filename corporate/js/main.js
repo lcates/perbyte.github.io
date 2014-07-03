@@ -26,40 +26,4 @@ $(function () {
 			}
 		}
 	});
-
-	$("#contact-form").validate({
-		rules: {
-			name: {
-				required: true
-			},
-			organization: {
-				required: true
-			},
-			email: {
-				required: true,
-				email: true
-			},
-			message: {
-				required: true
-			}
-		}
-	});
-
-	$("#contact-form").submit(function (e) {
-		if ($("#contact-form").valid()) {
-			e.preventDefault();
-
-			var formData = $("#contact-form").serialize();
-			$.ajax({
-				type: "POST",
-				url: "SendIt.ashx",
-				data: formData,
-				dataType: "json",
-				success: function (data) {
-					$("#messageSent").show(1000);
-					$("#message").hide(1000);
-				}
-			});
-		}
-	});
 });
