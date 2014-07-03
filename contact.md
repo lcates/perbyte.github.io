@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-permalink: /contact/
+permalink: /blog/contact/
 header: true
 keywords: Slightly Innovative, Aptify, Sitefinity, development
 description: Contact us at Slightly Innovative

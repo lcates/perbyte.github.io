@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /blog/about/
 header: true
 keywords: PerByte, Blog, Slightly Innovative, Aptify, Sitefinity, development
 description: About the PerByte blog
