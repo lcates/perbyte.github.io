@@ -53,10 +53,7 @@ header .navbar .nav > .active > a:focus {
 }
 
 header .navbar .divider-vertical {
-  height: 20px;
-  margin: 12px 2px 0 2px;
-  border-left: 0px solid #626262;
-  border-right: 1px solid #626262;
+  display: none;
 }
 /*
 header  .navbar .brand {
@@ -214,8 +211,19 @@ h1, h2, h3 {
     padding: 15px 0 0;
 }
 
-/*@media (max-width: 979px) {
-  body { padding-top: 0; } */
+@media (min-width: 768px) {
+  header .navbar .divider-vertical {
+    display: block;
+    height: 20px;
+    margin: 12px 2px 0 2px;
+    border-left: 0px solid #626262;
+    border-right: 1px solid #626262;
+  }
+}
 
-  #home, #testimonials, #default, #services, #contact-us, #footer { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
+@media (max-width: 979px) {
+/*  body { padding-top: 0; }
+
+  #home, #testimonials, #default, #services, #contact-us, #footer { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; } */
+
 }
