@@ -2,7 +2,7 @@ $(function () {
 	// For the about-us profiles.
 	$('.expand').click(function (e) {
 		e.preventDefault();
-		$(this).parents('.span6')
+		$(this).parents('.col-sm-6')
 		.children('.polaroid')
 		.css('overflow', 'visible')
 		.css('max-height', '1000px')
