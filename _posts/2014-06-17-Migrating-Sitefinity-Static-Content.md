@@ -171,9 +171,9 @@ FROM SitefinityOld..sf_permissions_inheritance_map
 Did it work?
 ------------
 
-If all queries ran successfully, you should now have all of your static content in your new Sitefinity installation. Go ahead and log into Sitefinity and confirm that it's all there. Keep in mind that the above scripts transferred everything that I needed for my particular situation, ~~but permissions were not one of them. If you need permissions, you'll need to dive in to figure that piece out yourself.~~ There may also be some further data that I missed, but everything that we were using was brought over just fine.
+If all queries ran successfully, you should now have all of your static content in your new Sitefinity installation. Go ahead and log into Sitefinity and confirm that it's all there. Keep in mind that the above scripts transferred everything that I needed for my particular situation, <del>but permissions were not one of them. If you need permissions, you'll need to dive in to figure that piece out yourself.</del> There may also be some further data that I missed, but everything that we were using was brought over just fine.
 
-Let us know in the comments if this did or did not work for you, ~~and if you happen to figure out how to pull the permissions, do us all a favor and post that here as well.~~ :smile:
+Let us know in the comments if this did or did not work for you, <del>and if you happen to figure out how to pull the permissions, do us all a favor and post that here as well.</del> :smile:
 
 [site]: http://www.sitefinity.com/
 [tel]: http://www.telerik.com/
