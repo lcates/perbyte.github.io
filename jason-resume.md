@@ -4,7 +4,7 @@ Jason Carr
 Work Experience
 ---------------
 
-* **PerByte, Inc.** (Fullerton, CA)
+* **PerByte, Inc.** (Fullerton, CA)  
   Aptify eBusiness Developer, Web & Mobile Expert - 2012-Present
 
   - Built/modified/maintained eBusiness websites for many  different assocations using responsive design and AJAX techniques
@@ -13,7 +13,7 @@ Work Experience
   - Built many custom plugins and extensions for the Aptify AMS system, such as mass communication systems with MailGun email and Twilio telecom integration, automated printing systems, data replication systems, and more
   - Managed contracting developers when required by the project
  
-* **Stanley Black & Decker HHI** (Foothill Ranch, CA)
+* **Stanley Black & Decker HHI** (Foothill Ranch, CA)  
   Senior Developer, Online Systems - 2009-2012
 
   - Built/modified/maintained renovated versions of high-profile Stanley Black & Decker websites, such as kwikset.com and pfisterfaucets.com
@@ -23,7 +23,7 @@ Work Experience
   - Lead development and maintenance for several networking Windows Mobile handheld applications used both locally and by sales staff across the US and Canada
   - Maintained four large Windows Workflow Foundation applications used to manage price change requests, offboarding, shipping, and travel approval business operations
 
-* **Ablesoft Solutions** (Oregon, IL)
+* **Ablesoft Solutions** (Oregon, IL)  
   Developer Analyst - 2005-2009
 
   - Developed Web and Windows database applications for companies such as Monsanto, ACCME, and other companies local to Oregon, IL
@@ -31,7 +31,7 @@ Work Experience
   - Performed as lead developer on several large projects and worked closely with customers to determine project specifications and requirements
   - Maintained (lead administrator) of five development and two production servers running Windows Server 2003/2008.
 
-* **Greenville College IT Helpdesk** (Greenville, IL)
+* **Greenville College IT Helpdesk** (Greenville, IL)  
   Student Technician - 2002-2004
 
   - Provided software and hardware technical support to students and professors
