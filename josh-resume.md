@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Josh Carlson
-permalink: /josh-resume
-header: true
+permalink: /josh-resume/
+header: false
 ---
 
 Josh Carlson

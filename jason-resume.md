@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Jason Carr
-permalink: /jason-resume
-header: true
+permalink: /jason-resume/
+header: false
 ---
 
 Jason Carr
