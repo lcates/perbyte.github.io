@@ -1,3 +1,10 @@
+---
+layout: page
+title: Jason Carr
+permalink: /jason-resume
+header: false
+---
+
 Jason Carr
 ==========
 
