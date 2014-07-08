@@ -5,8 +5,7 @@ Work Experience
 ---------------
 
 * **PerByte, Inc.** (Fullerton, CA)
-
-  Aptify eBusiness Developer, Web & Mobile Expert, 2012-Present
+  Aptify eBusiness Developer, Web & Mobile Expert - 2012-Present
 
   - Built/modified/maintained eBusiness websites for many  different assocations using responsive design and AJAX techniques
   - Managed and saw the success of many projects from discovery and design to implementation and deployment
@@ -15,8 +14,7 @@ Work Experience
   - Managed contracting developers when required by the project
  
 * **Stanley Black & Decker HHI** (Foothill Ranch, CA)
-
-  Senior Developer, Online Systems, 2009-2012
+  Senior Developer, Online Systems - 2009-2012
 
   - Built/modified/maintained renovated versions of high-profile Stanley Black & Decker websites, such as kwikset.com and pfisterfaucets.com
   - Turned high-quality Photoshop and Illustrator website designs into standards-based, CSS and AJAX-driven websites
@@ -26,8 +24,7 @@ Work Experience
   - Maintained four large Windows Workflow Foundation applications used to manage price change requests, offboarding, shipping, and travel approval business operations
 
 * **Ablesoft Solutions** (Oregon, IL)
-
-  Developer Analyst, 2005-2009
+  Developer Analyst - 2005-2009
 
   - Developed Web and Windows database applications for companies such as Monsanto, ACCME, and other companies local to Oregon, IL
   - Used the following technologies on a day-to-day basis: C#, VB.NET, and ASP.NET 2003/2005/2008; Microsoft SQL Server 2000/2005/2008
@@ -35,8 +32,7 @@ Work Experience
   - Maintained (lead administrator) of five development and two production servers running Windows Server 2003/2008.
 
 * **Greenville College IT Helpdesk** (Greenville, IL)
-
-  Student Technician, 2002-2004
+  Student Technician - 2002-2004
 
   - Provided software and hardware technical support to students and professors
   - Developed Macromedia Flash applications for distribution to students
