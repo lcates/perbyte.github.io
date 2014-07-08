@@ -1,3 +1,11 @@
 header nav.navbar-fixed-top {
 	position: static;
 }
+
+.corp-content {
+	margin: 30px 0;
+}
+
+.corp-content p, .corp-content blockquote, .corp-content ul, .corp-content ol, .corp-content dl, .corp-content table, .corp-content pre {
+	margin-top: 15px;
+}
