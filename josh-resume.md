@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: corp
 title: Josh Carlson
 permalink: /josh-resume/
 header: false

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: corp
 title: Jason Carr
 permalink: /jason-resume/
 header: false
