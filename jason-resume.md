@@ -2,7 +2,7 @@
 layout: page
 title: Jason Carr
 permalink: /jason-resume
-header: false
+header: true
 ---
 
 Jason Carr

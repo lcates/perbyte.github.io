@@ -2,7 +2,7 @@
 layout: page
 title: Josh Carlson
 permalink: /josh-resume
-header: false
+header: true
 ---
 
 Josh Carlson
