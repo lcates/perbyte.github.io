@@ -9,3 +9,8 @@ header nav.navbar-fixed-top {
 .corp-content p, .corp-content blockquote, .corp-content ul, .corp-content ol, .corp-content dl, .corp-content table, .corp-content pre {
 	margin-top: 15px;
 }
+
+h2 {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}

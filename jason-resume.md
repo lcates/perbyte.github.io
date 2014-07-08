@@ -8,6 +8,13 @@ header: false
 Jason Carr
 ==========
 
+Bio
+---
+
+Jason provides more than 9 years of broad development experience. With a focus on multiplatform web and mobile development, Jason can quickly identify and provide the most productive and efficient solutions to a broad range of business opportunities. Having worked with both the smallest and largest of businesses (including several Fortune 500 companies), Jason has a proven track record that demonstrates an unparalleled passion for solving business problems with long-lasting, effective, and eye-catching solutions.
+
+Not only is Jason extremely capable, he is driven to deliver solutions that outperform the competition in ease of use, adaptability, consistency, and performance. Being driven by the success of projects is a constant motivator to ensure that your company will have the most effective solutions that the industry provides.
+
 Work Experience
 ---------------
 

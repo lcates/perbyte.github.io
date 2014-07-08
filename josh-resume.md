@@ -8,6 +8,13 @@ header: false
 Josh Carlson
 ==========
 
+Bio
+---
+
+Josh, with more than 10 years of software/web development, database administration, and consulting experience, can provide any organization a resource that can truly hit the ground running. Having served as an IT Director for a national trade association during a major AMS implementation followed by multiple upgrades and continued support provides him perspective from the organization's point of view. He has consulted with trade, professional, fund raising and social service organizations from Phase 0 onward.
+
+Josh prides himself on his strong software development and systems analyst background. He is not only able to push organizations to realize the full potential of their software but also to push the software to handle the full need of the organization.
+
 Work Experience
 ---------------
 
