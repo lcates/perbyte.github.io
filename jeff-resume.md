@@ -72,15 +72,15 @@ Crystal Reports, SQL Server, SQL Server Integration Services, SQL Server Data Tr
 **Programming Languages**  
 VB.NET, ASP.NET, VBScript
 
-**Skills**
+**Skills**  
 Project Management, Relational Database Concepts, Server Virtualization, Hardware/Software Support, UNIX Experience (vi)
 
 Education
 ---------
 
-**Viterbo University** - August 2003 - May 2005, August 2006 - May 2008
-Bachelor of Science in Business Administration
+**Viterbo University** - August 2003 - May 2005, August 2006 - May 2008  
+Bachelor of Science in Business Administration  
 Computer Information Systems
 
-**King College** - August 2005 - May 2006
+**King College** - August 2005 - May 2006  
 Web Media and Marketing
