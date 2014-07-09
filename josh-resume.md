@@ -14,8 +14,8 @@ Josh prides himself on his strong software development and systems analyst backg
 
 ## Work History ##
 
-**American Rental Association** (Moline, IL)
-Director of Information Technology - March 2008 - May 2011
+**American Rental Association** (Moline, IL)  
+Director of Information Technology - 2008-2011
 
 - Assisted organization with IT strategic planning and implementation.
 - Supervised and acted as technical advisor/team lead for three full time IT staff.
@@ -25,22 +25,22 @@ Director of Information Technology - March 2008 - May 2011
 - Acted as lead software developer and database administrator for CRM and web systems.
 - Led staff training sessions for CRM, web, and productivity systems.
 
-**Ablesoft Solutions, Inc.** (Oregon, IL)
-Application Developer / Analyst - January 2007 - March 2008
+**Ablesoft Solutions, Inc.** (Oregon, IL)  
+Application Developer / Analyst - 2007-2008
 
 - Created common Windows Forms and ASP.NET libraries to assist in new project development.
 - Designed and developed various data driven C#, VB.NET, VB6, Office, and ASP applications.
 - Coordinated efforts on projects between multiple developers.
 
-**TDF Corporation** (Rock Island, IL)
-Application Developer / Analyst - February 2006 - December 2006
+**TDF Corporation** (Rock Island, IL)  
+Application Developer / Analyst - 2006
 
 - Designed and developed an ASP.NET rewrite of an existing FoxPro application.
 - Redesigned an inefficient flat file database into a relational database.
 - Helped produce common libraries and tools for increased productivity.
 
-**Chegg, Inc.** (Rock Island, IL)
-Co-Founder / Technology Lead - September 2005 - February 2006
+**Chegg, Inc.** (Rock Island, IL)  
+Co-Founder / Technology Lead - 2005-2006
 
 - Developed a scalable and distributed ASP.NET application and underlying database.
 - Managed a small team of developers and graphic artists.
@@ -48,7 +48,6 @@ Co-Founder / Technology Lead - September 2005 - February 2006
 - Implemented and maintained web and database infrastructure
 
 **Past Experience**  
-1997 - September 2005
 
 - Ablesoft Solutions - Application Developer/Analyst - 2001-2005
 - Woods Equipment Company - Network Administrator - 2000
@@ -60,5 +59,5 @@ MCPD Enterprise Architect, MCDBA, MCSE
 Education
 ---------
 
-**Iowa State University**
+**Iowa State University**  
 Bachelors of Science in Computer Science
