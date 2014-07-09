@@ -5,28 +5,21 @@ permalink: /jason-resume/
 header: false
 ---
 
-Jason Carr
-==========
-
-Bio
----
+# Jason Carr #
+**Aptify eBusiness Developer, Web & Mobile Expert**
 
 Jason provides more than 9 years of broad development experience. With a focus on multiplatform web and mobile development, Jason can quickly identify and provide the most productive and efficient solutions to a broad range of business opportunities. Having worked with both the smallest and largest of businesses (including several Fortune 500 companies), Jason has a proven track record that demonstrates an unparalleled passion for solving business problems with long-lasting, effective, and eye-catching solutions.
 
 Not only is Jason extremely capable, he is driven to deliver solutions that outperform the competition in ease of use, adaptability, consistency, and performance. Being driven by the success of projects is a constant motivator to ensure that your company will have the most effective solutions that the industry provides.
 
-Work Experience
----------------
+**Generally responsible for...**
+- Building/modifying/maintaining many fully functional eBusiness websites and customer portals
+- Managing and overseeing the success of many projects from discovery and design to implementation and deployment
+- Working with Aptify, Sitefinity, Bootstrap, jQuery, ASP.NET, C#, VB.NET, and more
+- Creating custom plugins, extensions, and integration for Aptify
 
-**PerByte, Inc.** (Fullerton, CA)  
-Aptify eBusiness Developer, Web & Mobile Expert - 2012-Present
+## Work Experience ##
 
-- Built/modified/maintained eBusiness websites for many  different assocations using responsive design and AJAX techniques
-- Managed and saw the success of many projects from discovery and design to implementation and deployment
-- Worked with the following technologies on a daily basis: Sitefinity, Aptify, Bootstrap, jQuery, ASP.NET, C#, Visual Basic
-- Built many custom plugins and extensions for the Aptify AMS system, such as mass communication systems with MailGun email and Twilio telecom integration, automated printing systems, data replication systems, and more
-- Managed contracting developers when required by the project
- 
 **Stanley Black & Decker HHI** (Foothill Ranch, CA)  
 Senior Developer, Online Systems - 2009-2012
 
