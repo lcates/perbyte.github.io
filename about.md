@@ -17,4 +17,4 @@ The site is...
 * Generated with [Jekyll](http://jekyllrb.com/)
 * Made pretty with [Hyde](http://hyde.getpoole.com/)
 * Hosted on [GitHub Pages](http://pages.github.com/)
-* Managed on [GitHub](https://github.com/slightly-innovative/slightly-innovative.github.io)
+* Managed on [GitHub](https://github.com/perbyte/perbyte.github.io)
