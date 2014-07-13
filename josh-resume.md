@@ -14,6 +14,19 @@ Josh prides himself on his strong software development and systems analyst backg
 
 ## Work History ##
 
+**PerByte, Inc**  
+Aptify Expert / Founder & CEO
+
+- All things Aptify
+ - Implementations
+ - Data conversions
+ - Integrations
+ - eBusiness
+ - Automation
+ - Business Intelligence
+ - Process efficiencies
+ - Support
+
 **American Rental Association** (Moline, IL)  
 Director of Information Technology - 2008-2011
 

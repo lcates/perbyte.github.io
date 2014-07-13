@@ -10,13 +10,14 @@ header: false
 
 With an eye for data and a taste for code Jeff brings years of programming-meets-complex-data to the team.
 
-**Generally responsible for...**
-
-- All things data. Conversions, transformations, reporting, and analysis
-- Back-end development for web sites and .NET configurations
-
 Work Experience
 ---------------
+
+**PerByte, Inc**  
+IT Consultant / Junior Developer
+
+ - All things Aptify, all things data. Conversions, transformations, reporting, and analysis
+ - Back-end development for Aptify web sites and .NET configurations
 
 **Adoni Networks** (La Crosse, WI)  
 Network Engineer / Applications Developer - 2013

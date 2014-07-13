@@ -12,14 +12,16 @@ Jason provides more than 9 years of broad development experience. With a focus o
 
 Not only is Jason extremely capable, he is driven to deliver solutions that outperform the competition in ease of use, adaptability, consistency, and performance. Being driven by the success of projects is a constant motivator to ensure that your company will have the most effective solutions that the industry provides.
 
-**Generally responsible for...**
-
-- Building/modifying/maintaining many fully functional eBusiness websites and customer portals
-- Managing and overseeing the success of many projects from discovery and design to implementation and deployment
-- Working with Aptify, Sitefinity, Bootstrap, jQuery, ASP.NET, C#, VB.NET, and more
-- Creating custom plugins, extensions, and integration for Aptify
-
 ## Work Experience ##
+
+**PerByte, Inc.**  
+Aptify eBusiness Developer, Web & Mobile Expert
+
+- All things Aptify
+ - Building/modifying/maintaining many fully functional eBusiness websites and customer portals
+ - Managing and overseeing the success of many projects from discovery and design to implementation and deployment
+ - Working with Aptify, Sitefinity, Bootstrap, jQuery, ASP.NET, C#, VB.NET, and more
+ - Creating custom plugins, extensions, and integration for Aptify
 
 **Stanley Black & Decker HHI** (Foothill Ranch, CA)  
 Senior Developer, Online Systems - 2009-2012
