@@ -2,7 +2,7 @@
 layout:      post
 date:        2014-07-18
 title:       "Redirecting Console Output"
-meta:        ""
+meta:        "PowerBox, BashBox, TextShell, whatever"
 description: ""
 comments:    true
 author:      jason
