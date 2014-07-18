@@ -1,6 +1,6 @@
 ---
 layout:      post
-date:        2014-07-07
+date:        2014-07-18
 title:       "Redirecting Console Output"
 meta:        ""
 description: ""
