@@ -11,6 +11,7 @@ description: What works at work works because it works not because it's work.
 tagline: Better is still better
 url: http://www.perbyte.com
 paginate: 5
+paginate_path: "blog/page:num"
 
 # Custom vars
 disqus_short_name: slightlyinnovative
