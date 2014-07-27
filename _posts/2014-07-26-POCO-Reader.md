@@ -24,7 +24,7 @@ So I need to get the data from SQL into these objects. A problem that has been s
 
 ###How about ORMs?###
 
-For data access a well designed ORM can be a huge boon to productivity and code quality. Using Entity Framework or NHibernate is like riding shotgun in a Hummer Limo. You'll have a chauffeur and you'll get there in style. You will, however, need to speak up and yell at the driver if you know a better route, assuming they listen, and good luck finding a close parking spot with that behemoth.
+For data access, a well designed ORM can be a huge boon to productivity and code quality. Using Entity Framework or NHibernate is like riding shotgun in a Hummer Limo. You'll have a chauffeur and you'll get there in style. You will, however, need to speak up and yell at the driver if you know a better route, assuming they listen, and good luck finding a close parking spot with that behemoth.
 
 I'm just looking to run a couple of SQL statements and get the data. For this situation they really take the simple out of KISS. Keep it. Stupid.
 
