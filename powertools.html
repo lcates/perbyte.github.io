@@ -65,6 +65,20 @@ date:      2014-06-17
 			color: red;
 		}
 	</style>
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			$("#mc-embedded-subscribe-form").validate({
+			  rules: {
+				mce-EMAIL: {
+				  required: true,
+				  email: true
+				}
+			  }
+			});
+		});
+	
+	</script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="140">
     <!--[if lt IE 7]>
@@ -122,7 +136,7 @@ date:      2014-06-17
 									<label for="mce-ORG">
 										Organization  <span class="asterisk">*</span>
 									</label>
-									<input type="text" value="" name="ORG" class="required form-control" id="mce-ORG">
+									<input type="text" value="" name="ORG" class="required form-control" id="mce-ORG" required>
 								</div>
 								<div class="row">
 									<div class="col-sm-6">
@@ -130,7 +144,7 @@ date:      2014-06-17
 											<label for="mce-FNAME">
 												First Name  <span class="asterisk">*</span>
 											</label>
-											<input type="text" value="" name="FNAME" class="required form-control" id="mce-FNAME">
+											<input type="text" value="" name="FNAME" class="required form-control" id="mce-FNAME" required>
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -138,7 +152,7 @@ date:      2014-06-17
 											<label for="mce-LNAME">
 												Last Name  <span class="asterisk">*</span>
 											</label>
-											<input type="text" value="" name="LNAME" class="required form-control" id="mce-LNAME">
+											<input type="text" value="" name="LNAME" class="required form-control" id="mce-LNAME" required>
 										</div>
 									</div>
 								</div>
@@ -148,16 +162,16 @@ date:      2014-06-17
 										<label for="mce-EMAIL">
 											Email Address  <span class="asterisk">*</span>
 										</label>
-										<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+										<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" required>
 									</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-										<label for="mce-PHONE">
-											Phone Number  <span class="asterisk">*</span>
-										</label>
-										<input type="text" name="PHONE" class="required form-control" value="" id="mce-PHONE">
-									</div>
+											<label for="mce-PHONE">
+												Phone Number
+											</label>
+											<input type="text" name="PHONE" class="form-control" value="" id="mce-PHONE">
+										</div>
 									</div>
 								</div>
 								<div class="row">
