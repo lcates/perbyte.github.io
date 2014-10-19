@@ -203,7 +203,14 @@ date:      2014-06-17
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
-			$("#mc-embedded-subscribe-form").validate();
+			$("#mc-embedded-subscribe-form").validate({
+			  rules: {
+				email: {
+				  required: true,
+				  email: true
+				}
+			  }
+			});
 		});
 	
 	</script>
