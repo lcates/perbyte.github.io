@@ -10,12 +10,12 @@ categories:
 tags:        .net data
 ---
 
-PerByte is a small company that accomplishes a lot of great things for our customers. Whether we're working with them on a configuration, data conversion, or implementation they keep us pretty busy. Being busy, however, is not the same thing as being *too busy*.
+PerByte is a small company that accomplishes a lot of great things for our customers. Whether we're working with them on a configuration, data conversion, or implementation, they keep us pretty busy. Being busy, however, is not the same thing as being *too busy*.
 
 > *To say "too busy" is merely to say "confused priorities."*
 > \- Jonathan Lockwood Huie
 
-As the core of our business work that we do for our customers is obviously very important and always demands a high priority. However, if that were our only priority we should be considered being negligent to those same and future customers. An investment does need to be made in both sharing what we've learned and improving our process.
+As the core of our business, work that we do for our customers is obviously very important and always demands a high priority. However, if that were our only priority we should be considered being negligent to those same and future customers. An investment does need to be made in both sharing what we've learned and improving our process.
 
 This blog is an initial example of sharing what we've learned. It's intentionally minimal and has a focus on small but important discoveries. It'll have the occasional rant and philosophical discussion but intends to have a strong lean toward activities in our core competencies (Aptify, Sitefinity, .NET, development, databases, etc.)
 
