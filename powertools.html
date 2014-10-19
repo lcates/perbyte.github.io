@@ -65,20 +65,6 @@ date:      2014-06-17
 			color: red;
 		}
 	</style>
-	<script type="text/javascript">
-	
-		$(document).ready(function() {
-			$("#mc-embedded-subscribe-form").validate({
-			  rules: {
-				mceEMAIL: {
-				  required: true,
-				  email: true
-				}
-			  }
-			});
-		});
-	
-	</script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="140">
     <!--[if lt IE 7]>
@@ -214,5 +200,19 @@ date:      2014-06-17
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="/corporate/js/main.js"></script>
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			$("#mc-embedded-subscribe-form").validate({
+			  rules: {
+				mceEMAIL: {
+				  required: true,
+				  email: true
+				}
+			  }
+			});
+		});
+	
+	</script>
 </body>
 </html>
