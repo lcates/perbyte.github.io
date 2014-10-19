@@ -61,7 +61,7 @@ date:      2014-06-17
         })();
     </script>
 	<style>
-		.asterisk {
+		.asterisk, .error {
 			color: red;
 		}
 	</style>
@@ -148,7 +148,7 @@ date:      2014-06-17
 										<label for="mce-EMAIL">
 											Email Address  <span class="asterisk">*</span>
 										</label>
-										<input type="email" value="" name="EMAIL" class="required email form-control" id="mceEMAIL" required>
+										<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" required>
 									</div>
 									</div>
 									<div class="col-sm-6">
@@ -203,14 +203,7 @@ date:      2014-06-17
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
-			$("#mc-embedded-subscribe-form").validate({
-			  rules: {
-				mceEMAIL: {
-				  required: true,
-				  email: true
-				}
-			  }
-			});
+			$("#mc-embedded-subscribe-form").validate();
 		});
 	
 	</script>
